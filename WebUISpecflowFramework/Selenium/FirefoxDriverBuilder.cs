@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.Interactions;
 
 namespace WebUISpecflowFramework.Selenium
 {
@@ -28,8 +29,13 @@ namespace WebUISpecflowFramework.Selenium
         /// <inheritdoc/>
         protected override IWebDriver MakeLocalWebDriver()
         {
+            var projectPath = Path.GetDirectoryName(Path.GetDirectoryName(Directory.GetCurrentDirectory()));
+            var downloadPath = Path.GetFullPath(Path.Join(projectPath, @"..\TestFiles\Download\"));
             FirefoxOptions.SetPreference("security.sandbox.content.level", 5);
             FirefoxOptions.SetPreference("network.proxy.type", 0);
+            FirefoxOptions.SetPreference("browser.download.folderList", 2);
+            FirefoxOptions.SetPreference("browser.download.dir", downloadPath);
+            FirefoxOptions.SetPreference("browser.download.useDownloadDir", true);
             FirefoxOptions.LogLevel = FirefoxDriverLogLevel.Info;
             FirefoxOptions.AcceptInsecureCertificates = true;
 

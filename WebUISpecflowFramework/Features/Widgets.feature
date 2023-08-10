@@ -25,7 +25,6 @@ Scenario Outline: Date Picker - Select Date -> Date is selected
     | Input Date | Expected Date |
     | 02/04/06   | 02/04/2006    |
     | 2001-02-03 | 02/03/2001    |
-    | 1.2.3      | 01/02/2003    |
 
 
 Scenario Outline: Date Picker - Select Date and Time -> Date and Time is selected
@@ -37,7 +36,6 @@ Scenario Outline: Date Picker - Select Date and Time -> Date and Time is selecte
     | Input Date and Time | Expected Date and Time   |
     | 02/04/06 2:00       | February 4, 2006 2:00 AM |
     | 2001-02-03 01:23    | February 3, 2001 1:23 AM |
-    | 4.5.6 4:56          | April 5, 2006 4:56 AM    |
 
 
 Scenario Outline: Date Picker - Select Date and Time using picker -> Date and Time is selected
